@@ -20,6 +20,11 @@ extends JCasAnnotator_ImplBase  {
 		String sLine = jcas.getDocumentText();
 
 		// TODO: make sure information from text collection are extracted correctly
+    if (sLine==null) {
+      System.err.println("Line extraction from text collection failed");
+      return;
+    }
+			
 		ArrayList<String> docInfo = parseDataLine(sLine);
 		
 		//This is to make sure that parsing done properly and 
